@@ -11,8 +11,10 @@
         <div class="container position-relative">
             <a class="navbar-brand fireworks-header-brand d-flex align-items-center" href="index.php">
                 <div class="fireworks-header-triangle-container">
-                    <img src="images/annai-logo.webp" alt="Annai Crackers Logo"
-                        title="Annai Crackers - Premium Fireworks" class="img-fluid fireworks-header-triangle-logo">
+                    <img src="images/annai-logo.webp"
+                        alt="Annai Crackers - Fireworks Manufacturer & Wholesaler in Sivakasi"
+                        title="Annai Crackers | Premium Fireworks Manufacturer Since 2003"
+                        class="img-fluid fireworks-header-triangle-logo">
                 </div>
                 <!-- <span class="fireworks-header-brand-text">Annai Crackers</span> -->
             </a>

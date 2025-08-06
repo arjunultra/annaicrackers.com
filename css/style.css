@@ -852,13 +852,17 @@ section.home-carousel .swiper-slide img {
     flex-wrap: wrap;
   }
 
-  .welcome-section .welcome-section-visual-area {
+  /* .welcome-section .welcome-section-visual-area {
     margin-top: 40px;
     padding: 40px 30px;
-  }
+  } */
 
   .welcome-section .welcome-section-image-container {
     height: 400px;
+  }
+  .welcome-section .welcome-section-hero-image {
+    height: 59%;
+    width: 80%;
   }
 }
 
@@ -1046,6 +1050,7 @@ section.home-carousel .swiper-slide img {
   line-height: 1.6;
   margin-bottom: 1.5rem;
   display: -webkit-box;
+  line-clamp: 3;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
@@ -1242,6 +1247,7 @@ section.home-carousel .swiper-slide img {
   .product-section .product-description {
     font-size: 0.85rem;
     margin-bottom: 1.2rem;
+    line-clamp: 2;
     -webkit-line-clamp: 2;
   }
 
@@ -2756,7 +2762,7 @@ section.home-carousel .swiper-slide img {
       rgba(191, 23, 25, 0.05) 0%,
       transparent 50%
     );
-  z-index: 1;
+  z-index: unset;
 }
 
 /* Section Titles */
@@ -3327,6 +3333,7 @@ section.home-carousel .swiper-slide img {
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   border: 1px solid rgba(0, 0, 0, 0.03);
+  height: 450px;
 }
 
 .fireworks-contact-card-decoration {
@@ -3769,6 +3776,7 @@ section.home-carousel .swiper-slide img {
 
   .fireworks-contact-card {
     padding: 1.5rem;
+    height: 500px;
   }
 
   .fireworks-contact-card-title {

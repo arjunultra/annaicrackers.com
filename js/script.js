@@ -124,108 +124,188 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 // safety page GSAP
 document.addEventListener("DOMContentLoaded", function () {
-  // Load required GSAP plugins
-  gsap.registerPlugin(SplitText, ScrollTrigger, MotionPathPlugin);
+  // First check if we're on a page with the safety guidelines section
+  const safetySection = document.querySelector(".safety-guidelines");
+  if (!safetySection) return;
 
-  // Split text animations
-  const splitTitles = document.querySelectorAll(".split-text");
-  splitTitles.forEach((title) => {
-    const split = new SplitText(title, { type: "lines,chars" });
-    gsap.from(split.chars, {
-      opacity: 0,
-      y: 20,
-      rotationX: 90,
-      duration: 0.6,
-      stagger: 0.02,
-      ease: "back.out(1.7)",
-      scrollTrigger: {
-        trigger: title,
+  // Check if GSAP plugins are loaded
+  if (
+    typeof gsap === "undefined" ||
+    typeof SplitText === "undefined" ||
+    typeof ScrollTrigger === "undefined" ||
+    typeof MotionPathPlugin === "undefined"
+  ) {
+    console.warn("GSAP plugins not loaded - animations disabled");
+    return;
+  }
+
+  // Register plugins safely
+  try {
+    gsap.registerPlugin(SplitText, ScrollTrigger, MotionPathPlugin);
+  } catch (e) {
+    console.error("Failed to register GSAP plugins:", e);
+    return;
+  }
+
+  // Initialize all SplitText animations
+  function initSplitTextAnimations() {
+    const splitTextElements = document.querySelectorAll(".split-text");
+
+    splitTextElements.forEach((element) => {
+      // Create new SplitText instance
+      const split = new SplitText(element, {
+        type: "lines,words,chars",
+        linesClass: "split-line",
+        wordsClass: "split-word",
+        charsClass: "split-char",
+      });
+
+      // Hide the characters initially
+      gsap.set(split.chars, {
+        opacity: 0,
+        y: 20,
+        rotationX: 90,
+      });
+
+      // Animate each element individually with proper triggers
+      ScrollTrigger.create({
+        trigger: element,
         start: "top 80%",
-        toggleActions: "play none none none",
-      },
+        onEnter: () => {
+          gsap.to(split.chars, {
+            opacity: 1,
+            y: 0,
+            rotationX: 0,
+            duration: 0.6,
+            stagger: 0.02,
+            ease: "back.out(1.7)",
+          });
+        },
+        // Clean up SplitText when scroll trigger is killed
+        onLeaveBack: () => {
+          if (split.revert) {
+            split.revert();
+          }
+        },
+      });
     });
-  });
+  }
 
   // Motion path for icons
-  const motionPathIcons = document.querySelectorAll(".motion-path");
-  motionPathIcons.forEach((icon) => {
-    gsap.from(icon, {
-      duration: 1.5,
-      motionPath: {
-        path: [
-          { x: 0, y: 0 },
-          { x: 0, y: -20 },
-          { x: 0, y: 0 },
-        ],
-        curviness: 1.5,
-      },
-      ease: "elastic.out(1, 0.5)",
-      scrollTrigger: {
-        trigger: icon,
-        start: "top 80%",
-        toggleActions: "play none none none",
-      },
+  function initMotionPathAnimations() {
+    const motionIcons = document.querySelectorAll(".motion-path");
+
+    motionIcons.forEach((icon) => {
+      gsap.from(icon, {
+        duration: 1.5,
+        motionPath: {
+          path: [
+            { x: 0, y: 0 },
+            { x: 0, y: -20 },
+            { x: 0, y: 0 },
+          ],
+          curviness: 1.5,
+        },
+        ease: "elastic.out(1, 0.5)",
+        scrollTrigger: {
+          trigger: icon,
+          start: "top 80%",
+          toggleActions: "play none none none",
+        },
+      });
     });
-  });
+  }
 
   // Card animations
-  const cards = document.querySelectorAll(".safety-guidelines-card");
-  cards.forEach((card, i) => {
-    gsap.from(card, {
-      opacity: 0,
-      y: 50,
-      duration: 0.8,
-      delay: i * 0.1,
-      ease: "power3.out",
-      scrollTrigger: {
-        trigger: card,
-        start: "top 85%",
-        toggleActions: "play none none none",
-      },
-    });
+  function initCardAnimations() {
+    const cards = document.querySelectorAll(".safety-guidelines-card");
 
-    // Hover effect enhancement
-    card.addEventListener("mouseenter", () => {
-      gsap.to(card, {
-        y: -10,
-        duration: 0.3,
-        ease: "power2.out",
+    cards.forEach((card, i) => {
+      gsap.from(card, {
+        opacity: 0,
+        y: 50,
+        duration: 0.8,
+        delay: i * 0.1,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: card,
+          start: "top 85%",
+          toggleActions: "play none none none",
+        },
+      });
+
+      // Hover effects
+      card.addEventListener("mouseenter", () => {
+        gsap.to(card, {
+          y: -10,
+          duration: 0.3,
+          ease: "power2.out",
+        });
+      });
+
+      card.addEventListener("mouseleave", () => {
+        gsap.to(card, {
+          y: 0,
+          duration: 0.3,
+          ease: "power2.out",
+        });
       });
     });
+  }
 
-    card.addEventListener("mouseleave", () => {
-      gsap.to(card, {
-        y: 0,
-        duration: 0.3,
-        ease: "power2.out",
+  // Column entrance animation
+  function initColumnAnimation() {
+    const columns = document.querySelectorAll(".safety-guidelines-column");
+
+    columns.forEach((column) => {
+      gsap.from(column, {
+        opacity: 0,
+        y: 50,
+        duration: 1,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: column,
+          start: "top 70%",
+          toggleActions: "play none none none",
+        },
       });
     });
-  });
-
-  // Section entrance animation
-  gsap.from(".safety-guidelines-column", {
-    opacity: 0,
-    y: 50,
-    duration: 1,
-    ease: "power3.out",
-    scrollTrigger: {
-      trigger: ".safety-guidelines",
-      start: "top 70%",
-      toggleActions: "play none none none",
-    },
-  });
+  }
 
   // CTA button animation
-  gsap.from(".safety-guidelines-btn", {
-    scale: 0.8,
-    opacity: 0,
-    duration: 0.8,
-    ease: "elastic.out(1, 0.5)",
-    scrollTrigger: {
-      trigger: ".safety-guidelines-cta",
-      start: "top 80%",
-      toggleActions: "play none none none",
-    },
+  function initCTAAnimation() {
+    const ctaButton = document.querySelector(".safety-guidelines-btn");
+
+    if (ctaButton) {
+      gsap.from(ctaButton, {
+        scale: 0.8,
+        opacity: 0,
+        duration: 0.8,
+        ease: "elastic.out(1, 0.5)",
+        scrollTrigger: {
+          trigger: ".safety-guidelines-cta",
+          start: "top 80%",
+          toggleActions: "play none none none",
+        },
+      });
+    }
+  }
+
+  // Initialize all animations
+  initSplitTextAnimations();
+  initMotionPathAnimations();
+  initCardAnimations();
+  initColumnAnimation();
+  initCTAAnimation();
+
+  // Clean up SplitText instances when leaving page
+  window.addEventListener("beforeunload", function () {
+    const splits = SplitText.instances;
+    if (splits && splits.length) {
+      splits.forEach((split) => {
+        if (split.revert) split.revert();
+      });
+    }
   });
 });
 
@@ -1720,52 +1800,58 @@ document.addEventListener("DOMContentLoaded", function () {
 // about first gsap
 // GSAP Animations for About Us Section
 // Register GSAP plugins
-gsap.registerPlugin(ScrollTrigger, MotionPathPlugin, SplitText);
 
 // Initialize animations when DOM is loaded
 document.addEventListener("DOMContentLoaded", function () {
+  const heritageSection = document.querySelector(".pyro-about-heritage");
+  if (!heritageSection) return;
+  gsap.registerPlugin(ScrollTrigger, MotionPathPlugin, SplitText);
   // Floating sparks animation
-  gsap.to(".pyro-heritage-spark", {
-    y: -30,
-    x: 15,
-    rotation: 360,
-    scale: 1.2,
-    duration: 3,
-    repeat: -1,
-    yoyo: true,
-    ease: "power2.inOut",
-    stagger: {
-      each: 0.5,
-      from: "random",
-    },
-  });
+  const sparks = document.querySelectorAll(".pyro-heritage-spark");
+  if (sparks.length) {
+    gsap.to(sparks, {
+      y: -30,
+      x: 15,
+      rotation: 360,
+      scale: 1.2,
+      duration: 3,
+      repeat: -1,
+      yoyo: true,
+      ease: "power2.inOut",
+      stagger: {
+        each: 0.5,
+        from: "random",
+      },
+    });
+  }
 
   // Badge entrance animation
-  gsap.fromTo(
-    ".pyro-heritage-badge",
-    {
-      scale: 0,
-      rotation: -180,
-      opacity: 0,
-    },
-    {
-      scale: 1,
-      rotation: 0,
-      opacity: 1,
-      duration: 1.2,
-      ease: "back.out(1.7)",
-      delay: 0.3,
-    }
-  );
+  const badge = document.querySelector(".pyro-heritage-badge");
+  if (badge) {
+    gsap.fromTo(
+      badge,
+      {
+        scale: 0,
+        rotation: -180,
+        opacity: 0,
+      },
+      {
+        scale: 1,
+        rotation: 0,
+        opacity: 1,
+        duration: 1.2,
+        ease: "back.out(1.7)",
+        delay: 0.3,
+      }
+    );
+  }
 
   // Main title SplitText animation
   const titleElement = document.querySelector(".pyro-heritage-title");
   if (titleElement) {
-    // Split by lines (already structured in your HTML)
     const titleLines = titleElement.querySelectorAll(".title-line");
 
     titleLines.forEach((line, index) => {
-      // Split each line into characters
       const splitLine = new SplitText(line, {
         type: "chars,words",
         charsClass: "char",
@@ -1803,12 +1889,12 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Story lead text animation
-  ScrollTrigger.create({
-    trigger: ".pyro-story-lead",
-    start: "top 80%",
-    onEnter: () => {
-      const storyElement = document.querySelector(".pyro-story-lead");
-      if (storyElement) {
+  const storyElement = document.querySelector(".pyro-story-lead");
+  if (storyElement) {
+    ScrollTrigger.create({
+      trigger: storyElement,
+      start: "top 80%",
+      onEnter: () => {
         const splitStory = new SplitText(storyElement, {
           type: "words",
           wordsClass: "word",
@@ -1821,129 +1907,134 @@ document.addEventListener("DOMContentLoaded", function () {
           ease: "power2.out",
           stagger: 0.03,
         });
-      }
-    },
-  });
-
-  // Timeline items animation
-  const timelineItems = document.querySelectorAll(".pyro-timeline-item");
-
-  timelineItems.forEach((item, index) => {
-    // Year animation
-    const yearElement = item.querySelector(".pyro-timeline-year");
-    if (yearElement) {
-      ScrollTrigger.create({
-        trigger: item,
-        start: "top 85%",
-        onEnter: () => {
-          const splitYear = new SplitText(yearElement, {
-            type: "chars",
-            charsClass: "char",
-          });
-
-          gsap.from(splitYear.chars, {
-            y: 50,
-            opacity: 0,
-            duration: 0.6,
-            ease: "power3.out",
-            stagger: 0.05,
-          });
-        },
-      });
-    }
-
-    // Title animation
-    const titleElement = item.querySelector(".pyro-timeline-title");
-    if (titleElement) {
-      ScrollTrigger.create({
-        trigger: item,
-        start: "top 85%",
-        onEnter: () => {
-          const splitTitle = new SplitText(titleElement, {
-            type: "words",
-            wordsClass: "word",
-          });
-
-          gsap.from(splitTitle.words, {
-            y: 30,
-            opacity: 0,
-            duration: 0.5,
-            ease: "power2.out",
-            stagger: 0.04,
-            delay: 0.2,
-          });
-        },
-      });
-    }
-
-    // Description animation
-    const descElement = item.querySelector(".pyro-timeline-desc");
-    if (descElement) {
-      ScrollTrigger.create({
-        trigger: item,
-        start: "top 85%",
-        onEnter: () => {
-          const splitDesc = new SplitText(descElement, {
-            type: "words",
-            wordsClass: "word",
-          });
-
-          gsap.from(splitDesc.words, {
-            y: 20,
-            opacity: 0,
-            duration: 0.4,
-            ease: "power2.out",
-            stagger: 0.02,
-            delay: 0.4,
-          });
-        },
-      });
-    }
-
-    // Timeline item slide in
-    gsap.fromTo(
-      item,
-      {
-        x: -100,
-        opacity: 0,
       },
-      {
-        x: 0,
-        opacity: 1,
-        duration: 0.8,
-        ease: "power2.out",
-        scrollTrigger: {
+    });
+  }
+
+  // Timeline animations
+  const timeline = document.querySelector(".pyro-heritage-timeline");
+  if (timeline) {
+    const timelineItems = document.querySelectorAll(".pyro-timeline-item");
+
+    // Timeline line animation
+    const timelineLine = document.querySelector(".pyro-timeline-line");
+    if (timelineLine) {
+      gsap.fromTo(
+        timelineLine,
+        {
+          scaleY: 0,
+          transformOrigin: "top",
+        },
+        {
+          scaleY: 1,
+          duration: 2,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: timeline,
+            start: "top 80%",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+    }
+
+    timelineItems.forEach((item, index) => {
+      // Timeline item slide in
+      gsap.fromTo(
+        item,
+        {
+          x: -100,
+          opacity: 0,
+        },
+        {
+          x: 0,
+          opacity: 1,
+          duration: 0.8,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: item,
+            start: "top 90%",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+
+      // Year animation
+      const yearElement = item.querySelector(".pyro-timeline-year");
+      if (yearElement) {
+        ScrollTrigger.create({
           trigger: item,
-          start: "top 90%",
-          toggleActions: "play none none reverse",
-        },
+          start: "top 85%",
+          onEnter: () => {
+            const splitYear = new SplitText(yearElement, {
+              type: "chars",
+              charsClass: "char",
+            });
+
+            gsap.from(splitYear.chars, {
+              y: 50,
+              opacity: 0,
+              duration: 0.6,
+              ease: "power3.out",
+              stagger: 0.05,
+            });
+          },
+        });
       }
-    );
-  });
 
-  // Timeline line animation
-  gsap.fromTo(
-    ".pyro-timeline-line",
-    {
-      scaleY: 0,
-      transformOrigin: "top",
-    },
-    {
-      scaleY: 1,
-      duration: 2,
-      ease: "power2.out",
-      scrollTrigger: {
-        trigger: ".pyro-heritage-timeline",
-        start: "top 80%",
-        toggleActions: "play none none reverse",
-      },
-    }
-  );
+      // Title animation
+      const titleElement = item.querySelector(".pyro-timeline-title");
+      if (titleElement) {
+        ScrollTrigger.create({
+          trigger: item,
+          start: "top 85%",
+          onEnter: () => {
+            const splitTitle = new SplitText(titleElement, {
+              type: "words",
+              wordsClass: "word",
+            });
 
-  // Image animations with MotionPath
+            gsap.from(splitTitle.words, {
+              y: 30,
+              opacity: 0,
+              duration: 0.5,
+              ease: "power2.out",
+              stagger: 0.04,
+              delay: 0.2,
+            });
+          },
+        });
+      }
+
+      // Description animation
+      const descElement = item.querySelector(".pyro-timeline-desc");
+      if (descElement) {
+        ScrollTrigger.create({
+          trigger: item,
+          start: "top 85%",
+          onEnter: () => {
+            const splitDesc = new SplitText(descElement, {
+              type: "words",
+              wordsClass: "word",
+            });
+
+            gsap.from(splitDesc.words, {
+              y: 20,
+              opacity: 0,
+              duration: 0.4,
+              ease: "power2.out",
+              stagger: 0.02,
+              delay: 0.4,
+            });
+          },
+        });
+      }
+    });
+  }
+
+  // Image animations
   const mainImage = document.querySelector(".pyro-heritage-main-image");
   if (mainImage) {
-    // Floating motion for main image
     gsap.to(mainImage, {
       motionPath: {
         path: "M0,0 Q10,-5 20,0 T40,0",
@@ -1955,7 +2046,6 @@ document.addEventListener("DOMContentLoaded", function () {
       ease: "power1.inOut",
     });
 
-    // Scale animation on scroll
     gsap.fromTo(
       mainImage,
       {
@@ -1978,165 +2068,117 @@ document.addEventListener("DOMContentLoaded", function () {
     );
   }
 
-  // Floating image animation
-  const floatingImage = document.querySelector(".pyro-heritage-floating-image");
-  if (floatingImage) {
-    // Circular motion path
-    gsap.to(floatingImage, {
-      motionPath: {
-        path: "M0,0 Q-15,-10 -30,0 T-60,0",
-        autoRotate: false,
-      },
-      duration: 8,
-      repeat: -1,
-      yoyo: true,
-      ease: "sine.inOut",
-    });
-
-    // Entrance animation
-    gsap.fromTo(
-      floatingImage,
-      {
-        scale: 0.5,
-        opacity: 0,
-        rotation: -45,
-      },
-      {
-        scale: 1,
-        opacity: 1,
-        rotation: 0,
-        duration: 1,
-        ease: "back.out(1.7)",
-        scrollTrigger: {
-          trigger: floatingImage,
-          start: "top 90%",
-          toggleActions: "play none none reverse",
-        },
-        delay: 0.3,
-      }
-    );
-  }
-
-  // Values title animation
-  const valuesTitleElement = document.querySelector(".pyro-values-title");
-  if (valuesTitleElement) {
-    ScrollTrigger.create({
-      trigger: valuesTitleElement,
-      start: "top 80%",
-      onEnter: () => {
-        const splitTitle = new SplitText(valuesTitleElement, {
-          type: "chars",
-          charsClass: "char",
-        });
-
-        gsap.from(splitTitle.chars, {
-          y: 50,
-          opacity: 0,
-          duration: 0.6,
-          ease: "power2.out",
-          stagger: 0.03,
-        });
-      },
-    });
-  }
-
-  // Value cards animation
-  const valueCards = document.querySelectorAll(".pyro-value-card");
-
-  valueCards.forEach((card, index) => {
-    // Card entrance animation
-    gsap.fromTo(
-      card,
-      {
-        y: 80,
-        opacity: 0,
-        rotationX: -45,
-        scale: 0.8,
-      },
-      {
-        y: 0,
-        opacity: 1,
-        rotationX: 0,
-        scale: 1,
-        duration: 0.8,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: card,
-          start: "top 85%",
-          toggleActions: "play none none reverse",
-        },
-        delay: index * 0.1,
-      }
-    );
-
-    // Icon floating animation
-    const icon = card.querySelector(".pyro-value-icon");
-    if (icon) {
-      gsap.to(icon, {
-        y: -8,
-        duration: 2,
-        repeat: -1,
-        yoyo: true,
-        ease: "power1.inOut",
-        delay: index * 0.2,
-      });
-    }
-
-    // Title and description animation
-    const title = card.querySelector(".pyro-value-title");
-    const desc = card.querySelector(".pyro-value-desc");
-
-    if (title) {
+  // Values section animations
+  const valuesSection = document.querySelector(".pyro-heritage-values");
+  if (valuesSection) {
+    const valuesTitleElement = document.querySelector(".pyro-values-title");
+    if (valuesTitleElement) {
       ScrollTrigger.create({
-        trigger: card,
-        start: "top 85%",
+        trigger: valuesTitleElement,
+        start: "top 80%",
         onEnter: () => {
-          const splitTitle = new SplitText(title, {
-            type: "words",
-            wordsClass: "word",
+          const splitTitle = new SplitText(valuesTitleElement, {
+            type: "chars",
+            charsClass: "char",
           });
 
-          gsap.from(splitTitle.words, {
-            y: 30,
+          gsap.from(splitTitle.chars, {
+            y: 50,
             opacity: 0,
-            duration: 0.5,
+            duration: 0.6,
             ease: "power2.out",
             stagger: 0.03,
-            delay: 0.3 + index * 0.1,
           });
         },
       });
     }
 
-    if (desc) {
-      ScrollTrigger.create({
-        trigger: card,
-        start: "top 85%",
-        onEnter: () => {
-          const splitDesc = new SplitText(desc, {
-            type: "words",
-            wordsClass: "word",
-          });
-
-          gsap.from(splitDesc.words, {
-            y: 20,
-            opacity: 0,
-            duration: 0.4,
-            ease: "power2.out",
-            stagger: 0.02,
-            delay: 0.5 + index * 0.1,
-          });
+    const valueCards = document.querySelectorAll(".pyro-value-card");
+    valueCards.forEach((card, index) => {
+      gsap.fromTo(
+        card,
+        {
+          y: 80,
+          opacity: 0,
+          rotationX: -45,
+          scale: 0.8,
         },
-      });
-    }
-  });
+        {
+          y: 0,
+          opacity: 1,
+          rotationX: 0,
+          scale: 1,
+          duration: 0.8,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: card,
+            start: "top 85%",
+            toggleActions: "play none none reverse",
+          },
+          delay: index * 0.1,
+        }
+      );
 
-  // The rest of your animations (parallax, hover interactions, etc.) remain the same
-  // ...
+      const icon = card.querySelector(".pyro-value-icon");
+      if (icon) {
+        gsap.to(icon, {
+          y: -8,
+          duration: 2,
+          repeat: -1,
+          yoyo: true,
+          ease: "power1.inOut",
+          delay: index * 0.2,
+        });
+      }
 
-  console.log(
-    "Pyro Masters About animations with GSAP SplitText initialized successfully!"
-  );
+      const title = card.querySelector(".pyro-value-title");
+      const desc = card.querySelector(".pyro-value-desc");
+
+      if (title) {
+        ScrollTrigger.create({
+          trigger: card,
+          start: "top 85%",
+          onEnter: () => {
+            const splitTitle = new SplitText(title, {
+              type: "words",
+              wordsClass: "word",
+            });
+
+            gsap.from(splitTitle.words, {
+              y: 30,
+              opacity: 0,
+              duration: 0.5,
+              ease: "power2.out",
+              stagger: 0.03,
+              delay: 0.3 + index * 0.1,
+            });
+          },
+        });
+      }
+
+      if (desc) {
+        ScrollTrigger.create({
+          trigger: card,
+          start: "top 85%",
+          onEnter: () => {
+            const splitDesc = new SplitText(desc, {
+              type: "words",
+              wordsClass: "word",
+            });
+
+            gsap.from(splitDesc.words, {
+              y: 20,
+              opacity: 0,
+              duration: 0.4,
+              ease: "power2.out",
+              stagger: 0.02,
+              delay: 0.5 + index * 0.1,
+            });
+          },
+        });
+      }
+    });
+  }
 });
 // second about section gsap
 // Register plugins

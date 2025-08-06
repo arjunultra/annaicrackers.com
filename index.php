@@ -11,7 +11,7 @@
 	<meta property="og:type" content="website">
 	<meta property="og:site_name" content="Annaicrackers - Premium Fireworks">
 	<meta property="og:url" content="https://www.annaicrackers.com">
-	<meta property="og:image" content="https://www.annaicrackers.com/images/fireworks-showcase.jpg">
+	<meta property="og:image" content="https://www.annaicrackers.com/images/android-icon-192x192.png">
 	<meta property="og:description"
 		content="India's trusted fireworks manufacturer & wholesale supplier. Buy premium Diwali crackers, sparklers, rockets & more. ISO-certified & safety compliant.">
 	<!-- SEO -->
@@ -42,10 +42,14 @@
 		<div class="swiper home-carousel-swiper">
 			<div class="swiper-wrapper">
 				<div class="swiper-slide">
-					<img src="images/index-slide-1.webp" class="img-fluid" alt="Fireworks Slide 1">
+					<img src="images/index-slide-1.webp" class="img-fluid"
+						alt="Annai Crackers premium fireworks display - Diwali special offers"
+						title="Premium Fireworks Collection - Annai Crackers">
 				</div>
 				<div class="swiper-slide">
-					<img src="images/index-slide-2.webp" class="img-fluid" alt="Fireworks Slide 2">
+					<img src="images/index-slide-2.webp" class="img-fluid"
+						alt="Safety-certified crackers wholesale - Annai Crackers Sivakasi"
+						title="Wholesale Fireworks Supplier - Annai Crackers">
 				</div>
 			</div>
 		</div>
@@ -137,7 +141,9 @@
 							</div>
 						</div>
 						<div class="welcome-section-hero-image">
-							<img src="images/hero-1.webp" alt="Premium Fireworks Collection"
+							<img src="images/hero-1.webp"
+								alt="Annai Crackers - Premium Fireworks Collection for Diwali & Celebrations"
+								title="Sivakasi's Finest Fireworks Manufacturer | Annai Crackers"
 								class="welcome-section-main-image">
 							<div class="welcome-section-glow-effect"></div>
 						</div>
@@ -176,7 +182,9 @@
 				<div class="col-12 col-md-6 col-lg-4 mb-4">
 					<div class="product-card h-100">
 						<div class="product-image-wrapper">
-							<img src="images/product-3.webp" alt="Sparkler Fountain" class="product-image">
+							<img src="images/product-3.webp"
+								alt="Annai Crackers Music Fountain Firework - Synchronized Pyro Show"
+								title="Professional Music Fountain Fireworks | Annai Crackers" class="product-image">
 							<div class="product-overlay">
 								<a target="_blank" href="products.php">
 									<div class="product-overlay-content">
@@ -203,7 +211,9 @@
 				<div class="col-12 col-md-6 col-lg-4 mb-4">
 					<div class="product-card h-100">
 						<div class="product-image-wrapper">
-							<img src="images/product-4.webp" alt="Color Sparklers" class="product-image">
+							<img src="images/product-4.webp"
+								alt="Hitler Bullet Bomb Crackers - Powerful Bursts for Festivals"
+								title="Explosive Hitler Bullet Bomb Fireworks - Wholesale" class="product-image">
 							<div class="product-overlay">
 								<a target="_blank" href="products.php">
 									<div class="product-overlay-content">
@@ -231,7 +241,9 @@
 				<div class="col-12 col-md-6 col-lg-4 mb-4">
 					<div class="product-card h-100">
 						<div class="product-image-wrapper">
-							<img src="images/product-7.webp" alt="Aerial Shell" class="product-image">
+							<img src="images/product-7.webp"
+								alt="Annai Crackers Aerial Shell - Sky Burst Fireworks Display"
+								title="Premium Aerial Shell Fireworks Manufacturer | Sivakasi" class="product-image">
 							<div class="product-overlay">
 								<a target="_blank" href="products.php">
 									<div class="product-overlay-content">
@@ -256,7 +268,9 @@
 				<div class="col-12 col-md-6 col-lg-4 mb-4">
 					<div class="product-card h-100">
 						<div class="product-image-wrapper">
-							<img src="images/product-2.webp" alt="Ground Chakkar" class="product-image">
+							<img src="images/product-2.webp"
+								alt="Colorful Ground Chakkar Spinning Fireworks - Annai Crackers"
+								title="Wholesale Ground Chakkar Fireworks Supplier" class="product-image">
 							<div class="product-overlay">
 								<a target="_blank" href="products.php">
 									<div class="product-overlay-content">
@@ -283,7 +297,8 @@
 				<div class="col-12 col-md-6 col-lg-4 mb-4">
 					<div class="product-card h-100">
 						<div class="product-image-wrapper">
-							<img src="images/product-8.webp" alt="Celebration Pack" class="product-image">
+							<img src="images/product-8.webp" alt="Fancy Mega Pencil Sparklers - Safe Handheld Fireworks"
+								title="Children's Sparklers - Annai Crackers Premium Quality" class="product-image">
 							<div class="product-overlay">
 								<a target="_blank" href="products.php">
 									<div class="product-overlay-content">
@@ -310,7 +325,8 @@
 				<div class="col-12 col-md-6 col-lg-4 mb-4">
 					<div class="product-card h-100">
 						<div class="product-image-wrapper">
-							<img src="images/product-1.webp" alt="Thunder Cracker" class="product-image">
+							<img src="images/product-1.webp" alt="50 Aerial Shot Firework Combo - Grand Finale Display"
+								title="Professional 50-Shot Aerial Fireworks Package" class="product-image">
 							<div class="product-overlay">
 								<a target="_blank" href="products.php">
 									<div class="product-overlay-content">
@@ -350,7 +366,9 @@
 	<!-- index parallax -->
 	<section class="parallax-section position-relative overflow-hidden wow fadeInUp">
 		<div class="parallax-wrapper">
-			<img class="parallax-img img-fluid" src="images/parallax.webp" alt="Fireworks Celebration">
+			<img class="parallax-img img-fluid" src="images/parallax.webp"
+				alt="Annai Crackers Premium Fireworks Display - Diwali & Wedding Celebrations"
+				title="Professional Fireworks Shows - Sivakasi's Leading Manufacturer">
 			<div class="overlay"></div>
 			<div class="container">
 				<div class="row justify-content-center">
@@ -554,7 +572,7 @@
 							</div>
 							<h3 class="package-title h4 font-weight-bold">Festival</h3>
 							<div class="price display-4 font-weight-bold my-3">Cele Pack</div>
-							<p class="text-white">City-wide celebrations</p>
+							<p class="text-white">City-wide celebrations for everyone</p>
 						</div>
 						<div class="package-body bg-white p-4">
 							<ul class="features-list list-unstyled">
@@ -703,7 +721,9 @@
 
 			<div class="row align-items-center mt-5">
 				<div class="col-12 col-md-3 col-lg-3 d-none d-md-block">
-					<img src="images/index-last-left.webp" alt="Sparkler decoration"
+					<img src="images/index-last-left.webp"
+						alt="Annai Crackers Ground Chakkar Fireworks - Colorful Spinning Display"
+						title="Premium Ground Chakkar Fireworks | Sivakasi Fireworks Manufacturer"
 						class="img-fluid index-why-choose-decoration-left rotate-slowly">
 				</div>
 				<div class="col-12 col-md-6 col-lg-6">
@@ -717,7 +737,9 @@
 					</div>
 				</div>
 				<div class="col-12 col-md-3 col-lg-3 d-none d-md-block">
-					<img src="images/index-last-left.webp" alt="Sparkler decoration"
+					<img src="images/index-last-left.webp"
+						alt="Annai Crackers Ground Chakkar Fireworks - Colorful Spinning Display"
+						title="Annai's Ground Chakkar Fireworks | Sivakasi Fireworks Manufacturer"
 						class="img-fluid index-why-choose-decoration-left rotate-slowly">
 				</div>
 			</div>

@@ -2,20 +2,22 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head itemscope itemtype="http://www.schema.org/website">
-    <title></title>
+<head itemscope itemtype="http://www.schema.org/WebSite">
+    <title>Annai Crackers - Premium Fireworks Manufacturer & Supplier in Sivakasi | Contact Us</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta property="og:title" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:title" content="Annai Crackers - Fireworks Manufacturer & Wholesale Supplier in Sivakasi">
     <meta property="og:type" content="website">
-    <meta property="og:site_name" content="">
-    <meta property="og:url" content="https://.com">
-    <meta property="og:image" content="https://.com/images/android-icon-192x192.png">
-    <meta name="keywords" content="">
-    <meta property="og:description" name="description" content="">
+    <meta property="og:site_name" content="Annai Crackers">
+    <meta property="og:url" content="https://www.annaicrackers.com/contact">
+    <meta property="og:image" content="https://www.annaicrackers.com/images/android-icon-192x192.png">
+    <meta name="keywords"
+        content="fireworks manufacturer Sivakasi, crackers wholesale, Diwali fireworks supplier, wedding crackers, contact fireworks company, Annai Crackers address, pyrotechnic experts">
+    <meta property="og:description" name="description"
+        content="Contact Annai Crackers - Leading fireworks manufacturer in Sivakasi. Call +91 7418198019 for sales or visit our store at RCS Colony. Open 9AM-9PM weekdays with 24/7 festival service.">
     <meta name="robots" content="all">
     <meta name="revisit-after" content="10 Days">
-    <meta name="copyright" content="">
+    <meta name="copyright" content="Annai Crackers">
     <meta name="language" content="English">
     <meta name="distribution" content="Global">
     <meta name="web_author" content="srisoftwarez.com">
@@ -24,9 +26,6 @@
     <link rel="apple-touch-icon" sizes="72x72" href="images/apple-icon-72x72.png">
     <link rel="icon" sizes="192x192" href="images/android-icon-192x192.png">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/hover-min.css">
-    <link rel="stylesheet" href="css/swiper.css">
-    <link rel="stylesheet" href="css/odometer-theme.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -41,7 +40,7 @@
     <!-- contact cards -->
     <!-- contact cards -->
     <section class="fireworks-contact py-5">
-        <div class="container">
+        <div class="container-fluid">
             <!-- Section Header with Animation Placeholder -->
             <div class="row justify-content-center mb-5">
                 <div class="col-12 col-md-10 col-lg-8 text-center">
@@ -55,12 +54,11 @@
                     </div>
                 </div>
             </div>
-
             <!-- Contact Cards - Stacked on mobile, 3 columns on desktop -->
-            <div class="row align-items-stretch mb-5">
+            <div class="row align-items-center mb-5">
                 <!-- Contact Card 1 - Location -->
                 <div class="col-12 col-md-4 mb-4">
-                    <div class="fireworks-contact-card h-100">
+                    <div class="fireworks-contact-card">
                         <div class="fireworks-contact-card-decoration"></div>
                         <div class="fireworks-contact-card-icon-wrapper">
                             <i class="bi bi-geo-alt-fill fireworks-contact-card-icon"></i>
@@ -85,7 +83,7 @@
 
                 <!-- Contact Card 2 - Contact Info -->
                 <div class="col-12 col-md-4 mb-4">
-                    <div class="fireworks-contact-card h-100">
+                    <div class="fireworks-contact-card">
                         <div class="fireworks-contact-card-decoration"></div>
                         <div class="fireworks-contact-card-icon-wrapper">
                             <i class="bi bi-telephone-fill fireworks-contact-card-icon"></i>
@@ -115,7 +113,7 @@
 
                 <!-- Contact Card 3 - Hours -->
                 <div class="col-12 col-md-4 mb-4">
-                    <div class="fireworks-contact-card h-100">
+                    <div class="fireworks-contact-card">
                         <div class="fireworks-contact-card-decoration"></div>
                         <div class="fireworks-contact-card-icon-wrapper">
                             <i class="bi bi-clock-fill fireworks-contact-card-icon"></i>
@@ -282,15 +280,9 @@
                 title="Shop Premium Fireworks - Quick Order Now">
         </a>
     </div>
-    <script src="js/odometer.min.js"></script>
-    <script src="js/swiper-bundle.min.js"></script>
     <script src="js/gsap.min.js"></script>
     <script src="js/SplitText.min.js"></script>
-    <script src="js/MotionPathPlugin.min.js"></script>
-    <script src="js/ScrollSmoother.min.js"></script>
-    <script src="js/ScrollToPlugin.min.js"></script>
     <script src="js/ScrollTrigger.min.js"></script>
-    <script src="js/MorphSVGPlugin.min.js"></script>
     <script src="js/script.js"></script>
 </body>
 

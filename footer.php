@@ -2,9 +2,11 @@
     <div class="container">
         <div class="row">
             <!-- Company Info -->
-            <div class="col-12 col-md-6 col-lg-4 mb-4 mb-lg-0">
+            <div class="col-12 col-md-12 col-lg-4 mb-4 mb-lg-0">
                 <div class="pyro-footer__brand text-center text-md-left">
-                    <img src="images/annai-logo.webp" alt="footer logo" title="Annai Crackers" class="img-fluid w-50">
+                    <img src="images/annai-logo.webp"
+                        alt="Annai Crackers - Premium Fireworks Manufacturer & Wholesale Supplier | Sivakasi"
+                        title="Annai Crackers | Certified Fireworks Manufacturer Since 2003" class="img-fluid w-50">
                     <h3 class="text-warning mb-3">Annai Crackers</h3>
                     <p class="small">Your trusted source for premium fireworks since 2003. Wholesale and retail
                         fireworks for all occasions.</p>
@@ -37,26 +39,28 @@
 
             <!-- Contact Info -->
             <div class="col-12 col-md-6 col-lg-4">
-                <h5 class="text-warning mb-3 text-center text-md-left">Contact Us</h5>
-                <ul class="list-unstyled text-center text-md-left">
-                    <li class="mb-2 d-flex justify-content-center justify-content-md-start align-items-start">
-                        <i class="bi bi-geo-alt-fill text-warning mr-2 mt-1"></i>
-                        <span>2/583, Naranapuram Road,RCS Colony, Sivakasi</span>
-                    </li>
-                    <li class="mb-2 d-flex justify-content-center justify-content-md-start align-items-start">
-                        <i class="bi bi-telephone-fill text-warning mr-2 mt-1"></i>
-                        <span>(+91)7418198019</span>
-                    </li>
-                    <li class="mb-2 d-flex justify-content-center justify-content-md-start align-items-start">
-                        <i class="bi bi-whatsapp text-warning mr-2 mt-1"></i>
-                        <span>(+91)9344811268</span>
-                    </li>
-                    <li class="d-flex justify-content-center justify-content-md-start align-items-start">
-                        <i class="bi bi-envelope-fill text-warning mr-2 mt-1"></i>
-                        <span>annaicrackers@gmail.com
-                        </span>
-                    </li>
-                </ul>
+                <div class="contact-container">
+                    <h5 class="text-warning mb-3 text-center text-md-left">Contact Us</h5>
+                    <ul class="list-unstyled text-center text-md-left">
+                        <li class="mb-2 d-flex justify-content-center justify-content-md-start align-items-start">
+                            <i class="bi bi-geo-alt-fill text-warning mr-2 mt-1"></i>
+                            <span>2/583, Naranapuram Road,RCS Colony, Sivakasi</span>
+                        </li>
+                        <li class="mb-2 d-flex justify-content-center justify-content-md-start align-items-start">
+                            <i class="bi bi-telephone-fill text-warning mr-2 mt-1"></i>
+                            <span>(+91)7418198019</span>
+                        </li>
+                        <li class="mb-2 d-flex justify-content-center justify-content-md-start align-items-start">
+                            <i class="bi bi-whatsapp text-warning mr-2 mt-1"></i>
+                            <span>(+91)9344811268</span>
+                        </li>
+                        <li class="d-flex justify-content-center justify-content-md-start align-items-start">
+                            <i class="bi bi-envelope-fill text-warning mr-2 mt-1"></i>
+                            <span>annaicrackers@gmail.com
+                            </span>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
 

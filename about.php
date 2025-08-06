@@ -11,7 +11,7 @@
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Annai Crackers - Premium Fireworks">
     <meta property="og:url" content="https://annaicrackers.com/about.php">
-    <meta property="og:image" content="https://annaicrackers.com/images/about-intro-1.webp">
+    <meta property="og:image" content="https://annaicrackers.com/images/android-icon-192x192.png">
     <meta property="og:description"
         content="Discover Annai Crackers' journey from a humble Sivakasi workshop to India's premier fireworks innovator. Award-winning pyrotechnics since 2003.">
     <!-- SEO -->
@@ -29,9 +29,7 @@
     <link rel="apple-touch-icon" sizes="72x72" href="images/apple-icon-72x72.png">
     <link rel="icon" sizes="192x192" href="images/android-icon-192x192.png">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/hover-min.css">
     <link rel="stylesheet" href="css/swiper.css">
-    <link rel="stylesheet" href="css/odometer-theme.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -40,8 +38,9 @@
 <body itemscope itemtype="http://schema.org/WebPage">
     <?php include_once "header.php"; ?>
     <section class="about-banner wow fadeInRight" wow-delay="5s">
-        <img class="img-fluid w-100" src="images/about-banner.webp" alt="Annai Crackers about banner"
-            title="Annai Crackers">
+        <img class="img-fluid w-100" src="images/about-banner.webp"
+            alt="Annai Crackers Fireworks Factory & Manufacturing Facility in Sivakasi"
+            title="About Annai Crackers | Trusted Fireworks Manufacturer Since 2003 | Sivakasi">
     </section>
     <!-- About Page Intro Section -->
     <!-- about page aboutus section -->
@@ -75,7 +74,7 @@
             <!-- Main Content -->
             <div class="row pyro-heritage-content">
                 <!-- Story Column -->
-                <div class="col-12 col-md-6 col-lg-7">
+                <div class="col-12 col-md-12 col-lg-7">
                     <div class="pyro-heritage-story">
                         <p class="pyro-story-lead split-text-story">
                             Annai Crackers isn't just about fireworks - we're architects of wonder,
@@ -119,18 +118,24 @@
                 </div>
 
                 <!-- Image Column -->
-                <div class="col-12 col-md-6 col-lg-5">
+                <div class="col-12 col-md-12 col-lg-5">
                     <div class="pyro-heritage-image-stack">
                         <div class="image-container  motion-image w-75 d-none d-lg-block">
-                            <img src="images/about-second.webp" alt="Annai Crackers Sivakasi"
-                                title="Annai Crackers Sivakasi" class="img-fluid rounded-pill">
+                            <img src="images/about-second.webp"
+                                alt="Annai Crackers Manufacturing Facility - Sivakasi Fireworks Production"
+                                title="Behind the Scenes at Annai Crackers Factory | Sivakasi"
+                                class="img-fluid rounded-pill">
                         </div>
                         <div class="pyro-heritage-main-image motion-image">
-                            <img src="images/about-intro-1.webp" alt="Pyro Masters Artisans" class="w-100 h-auto">
+                            <img src="images/about-intro-1.webp"
+                                alt="Annai Crackers Artisans Crafting Premium Fireworks"
+                                title="Handcrafted Fireworks by Master Pyrotechnicians" class="w-100 h-auto">
                             <div class="pyro-image-glow"></div>
                         </div>
                         <div class="pyro-heritage-floating-image motion-float d-none d-lg-block">
-                            <img src="images/index-last-left.webp" alt="Spectacular Display" class="w-100 h-auto">
+                            <img src="images/index-last-left.webp"
+                                alt="Annai Crackers Fireworks Display - Award-Winning Pyrotechnics"
+                                title="Professional Fireworks Show by Annai Crackers" class="w-100 h-auto">
                         </div>
                     </div>
                 </div>
@@ -212,7 +217,7 @@
         <div class="container-fluid px-lg-5">
             <div class="row">
                 <div class="col-12 text-center">
-                    <h2 class="brands-section-title text-center mb-5 h4">Our Premium Brands</h2>
+                    <h2 class="brands-section-title text-center mb-5 h4">Our Premium Trademarks</h2>
                     <p class="brands-section-subtitle text-center mb-5">
                         Every firework we sell is crafted under our own brand — built on trust, tradition, and
                         uncompromising quality.
@@ -225,9 +230,11 @@
                 <div class="col-md-6 col-lg-4 mb-4 d-flex">
                     <div class="brands-section-slide-inner w-100">
                         <div class="brands-section-logo">
-                            <img src="images/brand1.webp" alt="Brand 1" class="img-fluid">
+                            <img src="images/brand1.webp"
+                                alt="Annai Crackers Trademark 1 - Certified Premium Fireworks Brand"
+                                title="Trademark 1® - Official Fireworks Brand | Annai Crackers" class="img-fluid">
                         </div>
-                        <h3 class="brands-section-brand-name">Brand 1</h3>
+                        <h3 class="brands-section-brand-name">Trademark 1</h3>
                         <p class="brands-section-brand-desc">
                             Premium fireworks with spectacular effects and vibrant colors
                         </p>
@@ -238,9 +245,11 @@
                 <div class="col-md-6 col-lg-4 mb-4 d-flex">
                     <div class="brands-section-slide-inner w-100">
                         <div class="brands-section-logo">
-                            <img src="images/brand2.webp" alt="Brand 2" class="img-fluid">
+                            <img src="images/brand2.webp"
+                                alt="Annai Crackers Trademark 2 - Licensed High-Altitude Fireworks"
+                                title="Trademark 2® - Professional Display Fireworks | Sivakasi" class="img-fluid">
                         </div>
-                        <h3 class="brands-section-brand-name">Brand 2</h3>
+                        <h3 class="brands-section-brand-name">Trademark 2</h3>
                         <p class="brands-section-brand-desc">
                             High-altitude fireworks that light up the entire night sky
                         </p>
@@ -251,9 +260,11 @@
                 <div class="col-md-6 col-lg-4 mb-4 d-flex">
                     <div class="brands-section-slide-inner w-100">
                         <div class="brands-section-logo">
-                            <img src="images/brand3.webp" alt="Brand 3" class="img-fluid">
+                            <img src="images/brand3.webp"
+                                alt="Annai Crackers Trademark 3 - Registered Celebratory Crackers"
+                                title="Trademark 3® - Official Sound Fireworks Brand" class="img-fluid">
                         </div>
-                        <h3 class="brands-section-brand-name">Brand 3</h3>
+                        <h3 class="brands-section-brand-name">Trademark 3</h3>
                         <p class="brands-section-brand-desc">
                             Loud and powerful crackers for an unforgettable celebration
                         </p>

@@ -2,20 +2,22 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head itemscope itemtype="http://www.schema.org/website">
-    <title></title>
+<head itemscope itemtype="http://www.schema.org/WebSite">
+    <title>Fireworks Safety Guide - Annai Crackers Official Safety Tips | Sivakasi</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta property="og:title" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:title" content="Essential Fireworks Safety Guidelines by Annai Crackers Experts">
     <meta property="og:type" content="website">
-    <meta property="og:site_name" content="">
-    <meta property="og:url" content="https://.com">
-    <meta property="og:image" content="https://.com/images/android-icon-192x192.png">
-    <meta name="keywords" content="">
-    <meta property="og:description" name="description" content="">
+    <meta property="og:site_name" content="Annai Crackers">
+    <meta property="og:url" content="https://www.annaicrackers.com/safetytips">
+    <meta property="og:image" content="https://www.annaicrackers.com/images/android-icon-192x192.png">
+    <meta name="keywords"
+        content="fireworks safety tips, Diwali crackers safety, pyrotechnic precautions, Annai Crackers safety guide, handling fireworks safely, Sivakasi fireworks manufacturer safety">
+    <meta property="og:description" name="description"
+        content="Official safety guide from Annai Crackers: Learn best practices for fireworks handling, storage and emergency protocols. Certified safety tips from Sivakasi's leading manufacturer.">
     <meta name="robots" content="all">
     <meta name="revisit-after" content="10 Days">
-    <meta name="copyright" content="">
+    <meta name="copyright" content="Annai Crackers">
     <meta name="language" content="English">
     <meta name="distribution" content="Global">
     <meta name="web_author" content="srisoftwarez.com">
@@ -24,9 +26,6 @@
     <link rel="apple-touch-icon" sizes="72x72" href="images/apple-icon-72x72.png">
     <link rel="icon" sizes="192x192" href="images/android-icon-192x192.png">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/hover-min.css">
-    <link rel="stylesheet" href="css/swiper.css">
-    <link rel="stylesheet" href="css/odometer-theme.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -47,7 +46,7 @@
                 <div class="col-lg-8 col-12 text-center mb-5 safety-guidelines-header">
                     <h2 class="section-title text-danger split-text">Celebrate with Caution</h2>
                     <div class="safety-guidelines-divider">
-                        <div class="safety-guidelines-divider-icon">
+                        <div class="safety-guidelines-divider-icon motion-path">
                             <i class="bi bi-shield-fill-check"></i>
                         </div>
                     </div>
@@ -314,15 +313,10 @@
 
 
     <?php include_once "footer.php"; ?>
-    <script src="js/odometer.min.js"></script>
-    <script src="js/swiper-bundle.min.js"></script>
     <script src="js/gsap.min.js"></script>
     <script src="js/SplitText.min.js"></script>
-    <script src="js/MotionPathPlugin.min.js"></script>
-    <script src="js/ScrollSmoother.min.js"></script>
-    <script src="js/ScrollToPlugin.min.js"></script>
     <script src="js/ScrollTrigger.min.js"></script>
-    <script src="js/MorphSVGPlugin.min.js"></script>
+    <script src="js/MotionPathPlugin.min.js"></script>
     <script src="js/script.js"></script>
 </body>
 
